@@ -52,24 +52,20 @@ class SFTPHarvester(SFTPConnector):
     def list_files(self, remote_path='.', local_path=None):
         """
         Collects all files in remote path specified, and copies to local folder
+        remote_path: str path of ftp server while files are located
+        localpath: str path where you'd like files
         """
         #local_path = self.check_local_path(local_path)
         
         target_files = self.connection.listdir(remote_path)
         
         return target_files
-        """
-        for target_file in target_files:
-            if target_file not in os.listdir(local_path):
-                logger.info('file %s not in local directory. adding...' % target_file)
-                self.get_file(target_file, local_path)
-            else:
-                logger.info('file %s already in local directory. skipping...' % target_file)
-        """
     
     def get_file(self, file_name, local_path=None):
         """
         Copies file to local folder
+        file_name: file name you'd like copied
+        localpath: str path where you'd like files
         """
         if self.connected == True:
             logger.info('getting file %s' % file_name)
@@ -82,6 +78,8 @@ class SFTPHarvester(SFTPConnector):
     def get(self, file_name, local_path):
         """
         actually gets the file
+        file_name: file name you'd like copied
+        localpath: str path where you'd like files
         """
         if local_path == '.':
             self.connection.get(file_name)
@@ -92,6 +90,7 @@ class SFTPHarvester(SFTPConnector):
     def open(self, file_name):
         """
         opens a buffer file on sftp server
+        file_name: file name you'd like copied
         """
         
         return self.connection.open(file_name)
@@ -100,6 +99,7 @@ class SFTPHarvester(SFTPConnector):
     def read(self, file_name):
         """
         reads sftp content into file buffer
+        file_name: file name you'd like copied
         """
         temp_file_object = StringIO()
 
@@ -111,6 +111,7 @@ class SFTPHarvester(SFTPConnector):
     def check_local_path(self, local_path):
         """
         Quick check to see if local path exists and creates if it doesn't
+        localpath: str path where you'd like files
         """
         if not local_path:
             current = self.current_path()
@@ -124,11 +125,17 @@ class SFTPHarvester(SFTPConnector):
     
     @staticmethod
     def current_path():
+        """
+        gives your current path
+        """
         local_path = '.'
         return local_path
         
     @staticmethod
     def cb(bytes_transferred, total_bytes):
+        """
+        additional method to help calculate download
+        """
         f_loaded = bytes_transferred / float(total_bytes)
         p_loaded = f_loaded * float(100)
         logger.info('%s %% uploaded' % int(p_loaded))

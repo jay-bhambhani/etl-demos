@@ -36,6 +36,12 @@ logger = getLogger(__name__)
 
 
 def upload_wrapper(factory, upload_args):
+    """
+    wrapper function to avoid pickling of instance method
+    factory: s3_factory object
+    upload_args: tuple of arguments that 
+                 upload_part function takes
+    """
     multi_part, part, index, clean_headers = upload_args
     factory.upload_part(multi_part, part, index, clean_headers)
     return
@@ -284,6 +290,11 @@ class S3Factory(AWSConnector):
 
     @staticmethod
     def _stream_helper(connection, file_name):
+        """
+        opens file based on connection
+        connection: connection object
+        file_name: str
+        """
         if connection:
             file_object = StringIO()
             connection.getfo(file_name, file_object)

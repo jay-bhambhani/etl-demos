@@ -24,6 +24,7 @@ class CredentialManager(object):
     def get_credentials(self, source):
         """
         will get you the credentials for a given source platform
+        source: str source of which you'd like to obtain credentials
         """
         credential = dict()
         self.parser.read(CONFIG_PARSER_PATH)

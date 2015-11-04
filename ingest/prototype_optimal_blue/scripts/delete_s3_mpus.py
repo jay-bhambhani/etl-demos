@@ -13,6 +13,10 @@ logger = getLogger(__name__)
 
 
 def delete(bucket_name):
+    """
+    deletes multipart download from bucket
+    bucket_name: str of bucket to delete download
+    """
     
     s3_factory = S3Factory()
     s3_factory.s3_connect()
