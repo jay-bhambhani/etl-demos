@@ -58,22 +58,22 @@ def concat_files(ftp_connection, sftp):
 def upload_to_s3(s3_connection, ftp_connection, s3_factory, grouped_files, max_date_string):
     with closing(s3_connection) as connection:
         upload_weekly_files(s3_factory, ftp_connection, grouped_files['weekly'], max_date_string)
-        upload_daily_files(s3_factory, grouped_files['daily'])
+        upload_daily_files(s3_factory, ftp_connection, grouped_files['daily'])
 
 def upload_weekly_files(s3_factory, ftp_connection, files, max_date_string):
     logger.info('uploading weekly files %s' % files)
     weekly_aggregated_file = WEEKLY_FILE_NAME % max_date_string
     weekly_key_name = '{folder}/{f_name}'.format(folder=WEEKLY_FOLDER, f_name=weekly_aggregated_file)
-    s3_factory.upload_partial_files(OPTIMAL_BLUE_BUCKET, weekly_key_name, files,
-                             clean_headers=True, connection=ftp_connection)
+    multi_part = s3_factory.initiate_multipart_upload(OPTIMAL_BLUE_BUCKET, weekly_key_name)
+    s3_factory.upload_partial_files(multi_part, files, clean_headers=True, connection=ftp_connection)
+    logger.info('weekly file upload complete')
 
 
-def upload_daily_files(s3_factory, files):
+def upload_daily_files(s3_factory, ftp_connection, files):
     logger.info('uploading daily files %s' % files)
     for file_name in files:
         daily_key_name = '{folder}/{f_name}'.format(folder=DAILY_FOLDER, f_name=file_name)
-        with open(file_name) as contents:
-            s3_factory.set_key(OPTIMAL_BLUE_BUCKET, daily_key_name, contents)
+        s3_factory.set_key(OPTIMAL_BLUE_BUCKET, daily_key_name, file_name, connection=ftp_connection)
 
 
 def group_files(ftp_connection):
@@ -127,7 +127,7 @@ def add_to_totals(date_string, read_file_name, date_total):
     if date_string in date_total:
         date_total[date_string] += 1
     else:
-        date_total[date_string] = 0
+        date_total[date_string] = 1
     logger.info('current totals %s' % date_total)
 
 

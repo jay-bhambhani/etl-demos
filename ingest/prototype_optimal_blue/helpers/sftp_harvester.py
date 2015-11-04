@@ -19,6 +19,8 @@ from argparse import ArgumentParser
 from contextlib import contextmanager
 # paramiko is Python's built in OpenSSH package
 import pysftp
+# a way to write to an open file object
+from StringIO import StringIO
 # this is a credentials thing I created - temporary, 
 # but okay for the short term
 from credential_manager import CredentialManager
@@ -88,8 +90,22 @@ class SFTPHarvester(SFTPConnector):
     
     
     def open(self, file_name):
+        """
+        opens a buffer file on sftp server
+        """
         
         return self.connection.open(file_name)
+
+
+    def read(self, file_name):
+        """
+        reads sftp content into file buffer
+        """
+        temp_file_object = StringIO()
+
+        self.connection.getfo(file_name, temp_file_object, cb)
+
+        return temp_file_object
 
 
     def check_local_path(self, local_path):
@@ -111,26 +127,10 @@ class SFTPHarvester(SFTPConnector):
         local_path = '.'
         return local_path
         
-
-    
-
-
-# In[54]:
-
-
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
+    @staticmethod
+    def cb(bytes_transferred, total_bytes):
+        f_loaded = bytes_transferred / float(total_bytes)
+        p_loaded = f_loaded * float(100)
+        logger.info('%s %% uploaded' % int(p_loaded))
 
 

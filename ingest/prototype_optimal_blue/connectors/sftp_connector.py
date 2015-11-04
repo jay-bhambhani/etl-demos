@@ -3,8 +3,8 @@
 
 # In[8]:
 ###########################################################
-##### The connection object f#or SFTP with which we #######
-#####                     harvest                   #######
+###### The connection object for SFTP with which we #######
+######                    harvest                   #######
 ###########################################################
 
 # lets import some important packages
