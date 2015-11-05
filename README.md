@@ -1,3 +1,7 @@
+Before you go ahead and install packages try the following:
+
+
+
 Here are some packages that you might need!
 
 Install with pip install:
