@@ -2,10 +2,9 @@
 
 from setuptools import setup, find_packages
 setup(
-    name = "HelloWorld",
+    name = "CinchOptimalBlueHarvester",
     version = "0.1",
     packages = find_packages(exclude=['tests', 'output']),
-    scripts = ['say_hello.py'],
 
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
