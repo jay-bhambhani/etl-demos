@@ -16,7 +16,7 @@ from logging import getLogger, basicConfig, INFO
 # this does fun things with csv-style data
 import csv
 from argparse import ArgumentParser
-from contextlib import contextmanager
+from contextlib import contextmanager, closing
 from datetime import date
 # our new sftp and s3 connectors
 from helpers.sftp_harvester import SFTPHarvester
@@ -47,6 +47,8 @@ def pipe():
     with ftp_connection:
         grouped_files, max_date_string = concat_files(ftp_connection, sftp)
         upload_to_s3(s3_connection, ftp_connection, s3_factory, grouped_files, max_date_string)
+
+    logger.info('complete!')
 
 
 def concat_files(ftp_connection, sftp):
@@ -97,9 +99,7 @@ def upload_daily_files(s3_factory, ftp_connection, files):
     files: list of file names
     """
     logger.info('uploading daily files %s' % files)
-    for file_name in files:
-        daily_key_name = '{folder}/{f_name}'.format(folder=DAILY_FOLDER, f_name=file_name)
-        s3_factory.set_key(OPTIMAL_BLUE_BUCKET, daily_key_name, file_name, connection=ftp_connection)
+    s3_factory.set_keys(OPTIMAL_BLUE_BUCKET, DAILY_FOLDER, file_name, connection=ftp_connection)
 
 
 def group_files(ftp_connection):
@@ -177,17 +177,7 @@ def split_file_name(file_name):
     logger.info('city %s file type %s date %s' % (city, file_type, date_string))
     return city, file_type, date_string
 
-@contextmanager
-def closing(connection):
-    """
-    closing connections
-    connection: connection object
-    """
-    try:
-        yield connection
-    
-    finally:
-        connection.close()
+
 
 if __name__ == '__main__':
     pipe()

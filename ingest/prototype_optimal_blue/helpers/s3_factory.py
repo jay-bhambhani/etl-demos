@@ -42,8 +42,14 @@ def upload_wrapper(factory, upload_args):
     upload_args: tuple of arguments that 
                  upload_part function takes
     """
-    multi_part, part, index, clean_headers = upload_args
-    factory.upload_part(multi_part, part, index, clean_headers)
+    if len(upload_args) == 2:
+        logger.info('uploading keys')
+        key, file_name = upload_args
+        factory.set_key(key, file_name)
+    else:
+        logger.info('uploading parts')
+        multi_part, part, index, clean_headers = upload_args
+        factory.upload_part(multi_part, part, index, clean_headers)
     return
 
 # Let's make this puppy!
@@ -60,6 +66,7 @@ class S3Factory(AWSConnector):
         self.connected = False
         self.connected = None
         self.cores = max(cpu_count() - 1, 1)
+        self.pool = None
         super(S3Factory, self).__init__()
 
 
@@ -103,18 +110,54 @@ class S3Factory(AWSConnector):
         bucket = self.connection.create_bucket(bucket_name)
         return bucket
 
-    def set_key(self, bucket_name, key_name, file_name, connection=None):
+    def set_keys(self, bucket_name, key_base, files, connection=None):
         """
-        Create an s3 key
+        sets multiple s3 keys from files
         bucket_name: str
-        key_name: str
-        contents: file_object
+        key_base: str folder name of key you'd like
+        files: list of file name strs
+        connection: connection object
         """
         bucket = self.get_bucket(bucket_name)
-        key = Key(bucket)
-        key.key = key_name
-        logger.info('setting key %s' % key.key)
 
+        if self.cores > 1 and len(files) > 1:
+            logger.info('going the pooled approach')
+            self.pooled_key_upload(files, key_base, connection)
+
+        else:
+            for file_name  in files:
+                logger.info('sequential it is')
+                key_name = '{folder}/{f_name}'.format(folder=key_base, f_name=file_name)
+                key = self._create_key(key_name, bucket)
+                self.set_key(key, file_name, connection)
+
+
+    def pooled_key_upload(self, key_base, files, connection):
+        """
+        creates parallel job set to upload full files
+        bucket: s3 bucket object
+        key_base: str folder name of key you'd like
+        files: list of file name strs
+        connection: connection object
+        """
+        upload_jobs = list()
+        #test_parts = parts[:4]
+        
+        for file_name in files:
+            key_name = '{folder}/{f_name}'.format(folder=key_base, f_name=file_name)
+            key = self._create_key(key_name, bucket)
+            upload_jobs.append((key, file_name))
+            logger.info('loaded file %s to queue %s' % (file_name, upload_jobs))
+        
+        self.concurrent_upload(upload_jobs)
+
+    def set_key(self, key, file_name, connection):
+        """
+        Create an s3 key
+        file_name: str 
+        contents: file_object
+        """
+        logger.info('setting key %s' % key)
         file_object = self._stream_helper(connection, file_name)
         
         key.set_contents_from_file(file_object, cb=self._display_progress, num_cb=11)
@@ -143,12 +186,14 @@ class S3Factory(AWSConnector):
         clean_headers - bool (removed file headers)
         connection - object (whether you are opening a file from connection or local)
         """
+        print 'in upload decider function'
         if self.cores > 1 and len(parts) > 1:
             logger.info('turning to threaded approach')
+            print 'here'
             self.pooled_partial_files(multi_part, parts, clean_headers, connection)
 
         else:
-            logger.info('turning to the threaded approach')
+            logger.info('turning to sequential approach')
             self.sequential_partial_files(multi_part, parts, clean_headers, connection)
 
         logger.info('completing upload')
@@ -165,9 +210,11 @@ class S3Factory(AWSConnector):
         connection - object (whether you are opening a file from connection or local)
         """
         upload_jobs = list()
-        #test_parts = parts[:4]
+        print 'test parts instead of parts'
+        test_parts = parts[:4]
+        print parts, test_parts
         
-        for index, file_name in enumerate(parts):
+        for index, file_name in enumerate(test_parts):
             part = self._stream_helper(connection, file_name)
             upload_jobs.append((multi_part, part, index + 1, clean_headers))
             logger.info('loaded part %s to queue %s' % (file_name, upload_jobs))
@@ -180,12 +227,12 @@ class S3Factory(AWSConnector):
         upload_jobs: list of tuple arguments for upload function
         """
         logger.info('creating pool')
-        pool = Pool(self.cores)
+        self._initiate_pool()
         logger.info('running map task')
         _bound_upload_wrapper = partial(upload_wrapper, self)
-        pool.map(_bound_upload_wrapper, upload_jobs)
+        self.pool.map(_bound_upload_wrapper, upload_jobs)
         logger.info('tear down')
-        pool.close()
+        self.pool.close()
                 
 
     def sequential_partial_files(self, multi_part, parts, clean_headers, connection):
@@ -196,7 +243,6 @@ class S3Factory(AWSConnector):
         clean_headers - bool (removed file headers)
         connection - object (whether you are opening a file from connection or local)
         """
-
         for index, file_name in enumerate(parts):
             logger.info('uploading part %s - %s' % (index+1, file_name))
             with closing(self._connection_handler(connection, file_name)) as part:
@@ -304,4 +350,21 @@ class S3Factory(AWSConnector):
 
         return file_object
 
+    @staticmethod
+    def _initiate_pool(self):
+        "helper method to create a pool of processes"
+        pool = Pool(self.cores)
+        self.pool = pool
 
+    @staticmethod
+    def _create_key(key_name, bucket):
+        """
+        helper method to create a key
+        key_name: str of key
+        bucket: bucket object
+        """
+        key = Key(bucket)
+        key.key = key_name
+        logger.info('creating key %s' % key.key)
+
+        return key
