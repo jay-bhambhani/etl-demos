@@ -53,3 +53,10 @@ class SFTPConnector(object):
                                         password=login.credentials['password'])
         self.connected = True
         logger.info('connected to source %s' % self.source)
+
+    def remove_connection(self):
+        """
+        deletes connection thread
+        """
+        self.connection = None
+        self.connected = False

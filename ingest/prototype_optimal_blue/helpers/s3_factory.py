@@ -8,6 +8,7 @@
 # lets import some important packages
 import os
 import sys
+print sys.path
 import web
 import re
 from logging import getLogger, basicConfig, INFO
@@ -34,6 +35,9 @@ from inspect import getmro
 basicConfig(stream=sys.stdout, level=INFO)
 logger = getLogger(__name__)
 
+CORE_MIN = 1
+FILE_MIN = 1
+
 
 def upload_wrapper(factory, upload_args):
     """
@@ -48,8 +52,8 @@ def upload_wrapper(factory, upload_args):
         factory.set_key(key, file_name)
     else:
         logger.info('uploading parts')
-        multi_part, part, index, clean_headers = upload_args
-        factory.upload_part(multi_part, part, index, clean_headers)
+        multi_part, file_name, index, clean_headers = upload_args
+        factory.upload_part(multi_part, file_name, index, clean_headers)
     return
 
 # Let's make this puppy!
@@ -64,11 +68,24 @@ class S3Factory(AWSConnector):
         Connection and inheritance from AWSConnector
         """
         self.connected = False
-        self.connected = None
+        self.source = None
         self.cores = max(cpu_count() - 1, 1)
         self.pool = None
         super(S3Factory, self).__init__()
 
+    def add_data_source(self, source):
+        """
+        connects to data source you may need
+        source_object: object of source
+        """
+        self.source = source
+
+    def connect_to_source(self):
+        """
+        connects to data source
+        """
+        self.source.connect()
+    
 
     def get_bucket(self, bucket_name):
         """
@@ -110,60 +127,61 @@ class S3Factory(AWSConnector):
         bucket = self.connection.create_bucket(bucket_name)
         return bucket
 
-    def set_keys(self, bucket_name, key_base, files, connection=None):
+    def set_keys(self, bucket_name, key_base, files):
         """
         sets multiple s3 keys from files
         bucket_name: str
         key_base: str folder name of key you'd like
         files: list of file name strs
-        connection: connection object
         """
         bucket = self.get_bucket(bucket_name)
 
-        if self.cores > 1 and len(files) > 1:
+        if self.cores > CORE_MIN and len(files) > FILE_MIN:
             logger.info('going the pooled approach')
-            self.pooled_key_upload(files, key_base, connection)
+            self.pooled_key_upload(bucket, key_base, files)
 
         else:
             for file_name  in files:
                 logger.info('sequential it is')
                 key_name = '{folder}/{f_name}'.format(folder=key_base, f_name=file_name)
                 key = self._create_key(key_name, bucket)
-                self.set_key(key, file_name, connection)
+                self.set_key(key, file_name)
 
 
-    def pooled_key_upload(self, key_base, files, connection):
+    def pooled_key_upload(self, bucket, key_base, files):
         """
         creates parallel job set to upload full files
         bucket: s3 bucket object
         key_base: str folder name of key you'd like
         files: list of file name strs
-        connection: connection object
         """
         upload_jobs = list()
-        #test_parts = parts[:4]
         
         for file_name in files:
             key_name = '{folder}/{f_name}'.format(folder=key_base, f_name=file_name)
             key = self._create_key(key_name, bucket)
             upload_jobs.append((key, file_name))
-            logger.info('loaded file %s to queue %s' % (file_name, upload_jobs))
+            logger.info('loaded file %s to queue, size %s' % (file_name, len(upload_jobs)))
         
         self.concurrent_upload(upload_jobs)
 
-    def set_key(self, key, file_name, connection):
+    def set_key(self, key, file_name):
         """
         Create an s3 key
-        file_name: str 
-        contents: file_object
+        key: object of s3 key
+        file_object: file object being uploaded to key
         """
+        file_object = self._stream_helper(file_name)
+
         logger.info('setting key %s' % key)
-        file_object = self._stream_helper(connection, file_name)
-        
-        key.set_contents_from_file(file_object, cb=self._display_progress, num_cb=11)
+        try:
+            key.set_contents_from_file(file_object, cb=self._display_progress, num_cb=11)
+            return key
+
+        finally:
+            file_object.close()
 
 
-        return key
 
 
     def initiate_multipart_upload(self, bucket_name, key_name):
@@ -178,46 +196,38 @@ class S3Factory(AWSConnector):
 
         return multi_part
 
-    def upload_partial_files(self, multi_part, parts, clean_headers=False, connection=None):
+    def upload_partial_files(self, multi_part, parts, clean_headers=False):
         """
         decides how handle partial file uploads
         multi_part - the multi part download object from boto
         parts - list of parts
         clean_headers - bool (removed file headers)
-        connection - object (whether you are opening a file from connection or local)
         """
-        print 'in upload decider function'
-        if self.cores > 1 and len(parts) > 1:
+        if self.cores > CORE_MIN and len(parts) > FILE_MIN:
             logger.info('turning to threaded approach')
-            print 'here'
-            self.pooled_partial_files(multi_part, parts, clean_headers, connection)
+            self.pooled_partial_files(multi_part, parts, clean_headers)
 
         else:
             logger.info('turning to sequential approach')
-            self.sequential_partial_files(multi_part, parts, clean_headers, connection)
+            self.sequential_partial_files(multi_part, parts, clean_headers)
 
         logger.info('completing upload')
         multi_part.complete_upload()
 
         
 
-    def pooled_partial_files(self, multi_part, parts, clean_headers, connection):
+    def pooled_partial_files(self, multi_part, parts, clean_headers):
         """
         Use computer cores to upload multiple parts to key
         multi_part - the multi part download object from boto
         parts - list of parts
         clean_headers - bool (removed file headers)
-        connection - object (whether you are opening a file from connection or local)
         """
         upload_jobs = list()
-        print 'test parts instead of parts'
-        test_parts = parts[:4]
-        print parts, test_parts
         
-        for index, file_name in enumerate(test_parts):
-            part = self._stream_helper(connection, file_name)
-            upload_jobs.append((multi_part, part, index + 1, clean_headers))
-            logger.info('loaded part %s to queue %s' % (file_name, upload_jobs))
+        for index, file_name in enumerate(parts):
+            upload_jobs.append((multi_part, file_name, index + 1, clean_headers))
+            logger.info('loaded file %s to queue, size %s' % (file_name, index + 1))
         
         self.concurrent_upload(upload_jobs)
 
@@ -227,32 +237,31 @@ class S3Factory(AWSConnector):
         upload_jobs: list of tuple arguments for upload function
         """
         logger.info('creating pool')
-        self._initiate_pool()
+        pool = self._initiate_pool()
         logger.info('running map task')
         _bound_upload_wrapper = partial(upload_wrapper, self)
-        self.pool.map(_bound_upload_wrapper, upload_jobs)
+        pool.map(_bound_upload_wrapper, upload_jobs)
         logger.info('tear down')
-        self.pool.close()
+        pool.close()
+        pool.join
                 
 
-    def sequential_partial_files(self, multi_part, parts, clean_headers, connection):
+    def sequential_partial_files(self, multi_part, parts, clean_headers):
         """
         Upload pieces of a large file to a key
         multi_part - the multi part download object from boto
         parts - list of parts
         clean_headers - bool (removed file headers)
-        connection - object (whether you are opening a file from connection or local)
         """
         for index, file_name in enumerate(parts):
             logger.info('uploading part %s - %s' % (index+1, file_name))
-            with closing(self._connection_handler(connection, file_name)) as part:
-                self.upload_part(multi_part, part, index + 1, clean_headers)
-
+            self.upload_part(multi_part, part, index + 1, clean_headers)
+            part.close()
 
         return multi_part
 
 
-    def upload_part(self, multi_part, part, index, clean_headers):
+    def upload_part(self, multi_part, file_name, index, clean_headers):
         """
         Upload individual part
         multipart - object
@@ -260,6 +269,8 @@ class S3Factory(AWSConnector):
         index of part - int
         remove headers - bool
         """
+        part = self._stream_helper(file_name)
+
         if clean_headers:
             logger.info('cleaning headers')
             part = self._header_handler(part, index)
@@ -270,6 +281,8 @@ class S3Factory(AWSConnector):
             raise TypeError('wrong file format')
         else:
             logger.info('uploaded part %s' % index)
+        finally:
+            part.close()
 
 
     def delete_multipart_uploads(self, bucket_name, mpu_id=None):
@@ -289,22 +302,29 @@ class S3Factory(AWSConnector):
             for mpu in bucket.list_multipart_uploads():
                 logger.info('deleting mpu %s, parts %s' % (mpu.key_name, mpu.get_all_parts()))
                 bucket.cancel_multipart_upload(mpu.key_name, mpu.id)
-        
-    @staticmethod
-    def _connection_handler(connection, file_name):
-        """
-        Opens based on connection type
-        connection: object connection object
-        file_name: str file name
-        """
-        if connection:
-            open_method = connection.open(file_name, mode='r+')
-        
-        else:
-            open_method = open(file_name, 'rU')
 
-        return open_method
     
+    def _initiate_pool(self):
+        "helper method to create a pool of processes"
+        pool = Pool(self.cores)
+        return pool
+
+        
+    def _stream_helper(self, file_name):
+        """
+        opens file based on connection
+        file_name: str
+        """
+        if self.source:
+            self.connect_to_source()
+            file_object = StringIO()
+            with self.source.connection as source_connection:
+                self.source.connection.getfo(file_name, file_object)
+            file_object.seek(0)
+        else:
+            file_object = open(file_name, 'rU')
+
+        return file_object
     
 
     @staticmethod
@@ -317,6 +337,7 @@ class S3Factory(AWSConnector):
         p_loaded = f_loaded * float(100)
         logger.info('%s %% uploaded' % int(p_loaded))
 
+    
     @staticmethod
     def _header_handler(part, index):
         """
@@ -334,27 +355,7 @@ class S3Factory(AWSConnector):
         return prepped_file
 
 
-    @staticmethod
-    def _stream_helper(connection, file_name):
-        """
-        opens file based on connection
-        connection: connection object
-        file_name: str
-        """
-        if connection:
-            file_object = StringIO()
-            connection.getfo(file_name, file_object)
-            file_object.seek(0)
-        else:
-            file_object = open(file_name, 'rU')
-
-        return file_object
-
-    @staticmethod
-    def _initiate_pool(self):
-        "helper method to create a pool of processes"
-        pool = Pool(self.cores)
-        self.pool = pool
+ 
 
     @staticmethod
     def _create_key(key_name, bucket):
