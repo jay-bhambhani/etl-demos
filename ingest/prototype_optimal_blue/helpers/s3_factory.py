@@ -243,7 +243,7 @@ class S3Factory(AWSConnector):
         pool.map(_bound_upload_wrapper, upload_jobs)
         logger.info('tear down')
         pool.close()
-        pool.join
+        pool.join()
                 
 
     def sequential_partial_files(self, multi_part, parts, clean_headers):
