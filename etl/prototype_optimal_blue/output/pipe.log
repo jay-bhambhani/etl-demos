@@ -1,0 +1,1637 @@
+['/Users/jbhambhani/cinch/mortgage-interest-data-prototype/ingest/prototype_optimal_blue/scripts', '/Users/jbhambhani/cinch/mortgage-interest-data-prototype/ingest/prototype_optimal_blue', '/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python27.zip', '/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7', '/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-darwin', '/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac', '/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac/lib-scriptpackages', '/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk', '/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-old', '/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/site-packages', '/Library/Python/2.7/site-packages/boto-2.32.1-py2.7.egg', '/Library/Python/2.7/site-packages/pip-1.5.2-py2.7.egg', '/Library/Python/2.7/site-packages/readline-6.2.4.1-py2.7-macosx-10.7-intel.egg', '/Library/Python/2.7/site-packages/StarCluster-0.95.5-py2.7.egg', '/Library/Python/2.7/site-packages/iso8601-0.1.10-py2.7.egg', '/Library/Python/2.7/site-packages/scp-0.8.0-py2.7.egg', '/Library/Python/2.7/site-packages/pycrypto-2.6.1-py2.7-macosx-10.9-intel.egg', '/Library/Python/2.7/site-packages/optcomplete-1.2_devel-py2.7.egg', '/Library/Python/2.7/site-packages/iptools-0.6.1-py2.7.egg', '/Library/Python/2.7/site-packages/workerpool-0.9.2-py2.7.egg', '/Library/Python/2.7/site-packages/ecdsa-0.11-py2.7.egg', '/Library/Python/2.7/site-packages']
+INFO:connectors.aws_connector:connected to s3
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:__main__:grouping files
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:__main__:city ATL file type fedfile date 20151205
+INFO:__main__:city ATL file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding ATL_fedfile_20151205.txt to weekly files
+INFO:__main__:city AUS file type fedfile date 20151205
+INFO:__main__:city AUS file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding AUS_fedfile_20151205.txt to weekly files
+INFO:__main__:city BIR file type fedfile date 20151205
+INFO:__main__:city BIR file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 3}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding BIR_fedfile_20151205.txt to weekly files
+INFO:__main__:city BOS file type fedfile date 20151205
+INFO:__main__:city BOS file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 4}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding BOS_fedfile_20151205.txt to weekly files
+INFO:__main__:city BUF file type fedfile date 20151205
+INFO:__main__:city BUF file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 5}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding BUF_fedfile_20151205.txt to weekly files
+INFO:__main__:city CHA file type fedfile date 20151205
+INFO:__main__:city CHA file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 6}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding CHA_fedfile_20151205.txt to weekly files
+INFO:__main__:city CHI file type fedfile date 20151205
+INFO:__main__:city CHI file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 7}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding CHI_fedfile_20151205.txt to weekly files
+INFO:__main__:city CIN file type fedfile date 20151205
+INFO:__main__:city CIN file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 8}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding CIN_fedfile_20151205.txt to weekly files
+INFO:__main__:city CLE file type fedfile date 20151205
+INFO:__main__:city CLE file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 9}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding CLE_fedfile_20151205.txt to weekly files
+INFO:__main__:city COL file type fedfile date 20151205
+INFO:__main__:city COL file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 10}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding COL_fedfile_20151205.txt to weekly files
+INFO:__main__:city DAL file type fedfile date 20151205
+INFO:__main__:city DAL file type fedfile date 20151205
+INFO:__main__:current totals {u'20151205': 11}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding DAL_fedfile_20151205.txt to weekly files
+INFO:__main__:city DEN file type fedfile date 20151130
+INFO:__main__:city DEN file type fedfile date 20151130
+INFO:__main__:current totals {u'20151205': 11, u'20151130': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding DEN_fedfile_20151130.txt to daily files
+INFO:__main__:city DEN file type fedfile date 20151201
+INFO:__main__:city DEN file type fedfile date 20151201
+INFO:__main__:current totals {u'20151205': 11, u'20151130': 1, u'20151201': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding DEN_fedfile_20151201.txt to daily files
+INFO:__main__:city DEN file type fedfile date 20151202
+INFO:__main__:city DEN file type fedfile date 20151202
+INFO:__main__:current totals {u'20151205': 11, u'20151130': 1, u'20151201': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding DEN_fedfile_20151202.txt to daily files
+INFO:__main__:city DEN file type fedfile date 20151203
+INFO:__main__:city DEN file type fedfile date 20151203
+INFO:__main__:current totals {u'20151205': 11, u'20151130': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding DEN_fedfile_20151203.txt to daily files
+INFO:__main__:city DEN file type fedfile date 20151204
+INFO:__main__:city DEN file type fedfile date 20151204
+INFO:__main__:current totals {u'20151130': 1, u'20151205': 11, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding DEN_fedfile_20151204.txt to daily files
+INFO:__main__:city DEN file type fedfile date 20151205
+INFO:__main__:city DEN file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 1, u'20151205': 12, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding DEN_fedfile_20151205.txt to weekly files
+INFO:__main__:city DET file type fedfile date 20151205
+INFO:__main__:city DET file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 1, u'20151205': 13, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding DET_fedfile_20151205.txt to weekly files
+INFO:__main__:city HAR file type fedfile date 20151205
+INFO:__main__:city HAR file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 1, u'20151205': 14, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding HAR_fedfile_20151205.txt to weekly files
+INFO:__main__:city HOU file type fedfile date 20151205
+INFO:__main__:city HOU file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 1, u'20151205': 15, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding HOU_fedfile_20151205.txt to weekly files
+INFO:__main__:city IND file type fedfile date 20151205
+INFO:__main__:city IND file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 1, u'20151205': 16, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding IND_fedfile_20151205.txt to weekly files
+INFO:__main__:city JAC file type fedfile date 20151205
+INFO:__main__:city JAC file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 1, u'20151205': 17, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding JAC_fedfile_20151205.txt to weekly files
+INFO:__main__:city KAN file type fedfile date 20151205
+INFO:__main__:city KAN file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 1, u'20151205': 18, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding KAN_fedfile_20151205.txt to weekly files
+INFO:__main__:city LAS file type fedfile date 20151205
+INFO:__main__:city LAS file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 1, u'20151205': 19, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding LAS_fedfile_20151205.txt to weekly files
+INFO:__main__:city LOS file type fedfile date 20151130
+INFO:__main__:city LOS file type fedfile date 20151130
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 19, u'20151204': 1, u'20151201': 1, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding LOS_fedfile_20151130.txt to daily files
+INFO:__main__:city LOS file type fedfile date 20151201
+INFO:__main__:city LOS file type fedfile date 20151201
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 19, u'20151204': 1, u'20151201': 2, u'20151203': 1, u'20151202': 1}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding LOS_fedfile_20151201.txt to daily files
+INFO:__main__:city LOS file type fedfile date 20151202
+INFO:__main__:city LOS file type fedfile date 20151202
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 19, u'20151204': 1, u'20151201': 2, u'20151203': 1, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding LOS_fedfile_20151202.txt to daily files
+INFO:__main__:city LOS file type fedfile date 20151203
+INFO:__main__:city LOS file type fedfile date 20151203
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 19, u'20151204': 1, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding LOS_fedfile_20151203.txt to daily files
+INFO:__main__:city LOS file type fedfile date 20151204
+INFO:__main__:city LOS file type fedfile date 20151204
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 19, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding LOS_fedfile_20151204.txt to daily files
+INFO:__main__:city LOS file type fedfile date 20151205
+INFO:__main__:city LOS file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 20, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding LOS_fedfile_20151205.txt to weekly files
+INFO:__main__:city LOU file type fedfile date 20151205
+INFO:__main__:city LOU file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 21, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding LOU_fedfile_20151205.txt to weekly files
+INFO:__main__:city MEM file type fedfile date 20151205
+INFO:__main__:city MEM file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 22, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding MEM_fedfile_20151205.txt to weekly files
+INFO:__main__:city MIA file type fedfile date 20151205
+INFO:__main__:city MIA file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 23, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding MIA_fedfile_20151205.txt to weekly files
+INFO:__main__:city MIL file type fedfile date 20151205
+INFO:__main__:city MIL file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 24, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding MIL_fedfile_20151205.txt to weekly files
+INFO:__main__:city MIN file type fedfile date 20151205
+INFO:__main__:city MIN file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 25, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding MIN_fedfile_20151205.txt to weekly files
+INFO:__main__:city NAS file type fedfile date 20151205
+INFO:__main__:city NAS file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 26, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding NAS_fedfile_20151205.txt to weekly files
+INFO:__main__:city NOR file type fedfile date 20151205
+INFO:__main__:city NOR file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 27, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding NOR_fedfile_20151205.txt to weekly files
+INFO:__main__:city NYC file type fedfile date 20151205
+INFO:__main__:city NYC file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 28, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding NYC_fedfile_20151205.txt to weekly files
+INFO:__main__:city OKC file type fedfile date 20151205
+INFO:__main__:city OKC file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 29, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding OKC_fedfile_20151205.txt to weekly files
+INFO:__main__:city ORL file type fedfile date 20151205
+INFO:__main__:city ORL file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 30, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding ORL_fedfile_20151205.txt to weekly files
+INFO:__main__:city PHI file type fedfile date 20151205
+INFO:__main__:city PHI file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 31, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding PHI_fedfile_20151205.txt to weekly files
+INFO:__main__:city PHO file type fedfile date 20151205
+INFO:__main__:city PHO file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 32, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding PHO_fedfile_20151205.txt to weekly files
+INFO:__main__:city PIT file type fedfile date 20151205
+INFO:__main__:city PIT file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 33, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding PIT_fedfile_20151205.txt to weekly files
+INFO:__main__:city POR file type fedfile date 20151205
+INFO:__main__:city POR file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 34, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding POR_fedfile_20151205.txt to weekly files
+INFO:__main__:city PRO file type fedfile date 20151205
+INFO:__main__:city PRO file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 35, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding PRO_fedfile_20151205.txt to weekly files
+INFO:__main__:city RAL file type fedfile date 20151205
+INFO:__main__:city RAL file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 36, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding RAL_fedfile_20151205.txt to weekly files
+INFO:__main__:city RIC file type fedfile date 20151205
+INFO:__main__:city RIC file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 37, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding RIC_fedfile_20151205.txt to weekly files
+INFO:__main__:city SAC file type fedfile date 20151205
+INFO:__main__:city SAC file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 38, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding SAC_fedfile_20151205.txt to weekly files
+INFO:__main__:city SAN file type fedfile date 20151205
+INFO:__main__:city SAN file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 39, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding SAN_fedfile_20151205.txt to weekly files
+INFO:__main__:city SAT file type fedfile date 20151205
+INFO:__main__:city SAT file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 40, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding SAT_fedfile_20151205.txt to weekly files
+INFO:__main__:city SEA file type fedfile date 20151205
+INFO:__main__:city SEA file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 41, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding SEA_fedfile_20151205.txt to weekly files
+INFO:__main__:city SFO file type fedfile date 20151205
+INFO:__main__:city SFO file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 42, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding SFO_fedfile_20151205.txt to weekly files
+INFO:__main__:city SLC file type fedfile date 20151205
+INFO:__main__:city SLC file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 43, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding SLC_fedfile_20151205.txt to weekly files
+INFO:__main__:city TAM file type fedfile date 20151205
+INFO:__main__:city TAM file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 44, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding TAM_fedfile_20151205.txt to weekly files
+INFO:__main__:city VAB file type fedfile date 20151205
+INFO:__main__:city VAB file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 45, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding VAB_fedfile_20151205.txt to weekly files
+INFO:__main__:city WAS file type fedfile date 20151205
+INFO:__main__:city WAS file type fedfile date 20151205
+INFO:__main__:current totals {u'20151130': 2, u'20151205': 46, u'20151204': 2, u'20151201': 2, u'20151203': 2, u'20151202': 2}
+INFO:__main__:current max date 20151205
+INFO:__main__:adding WAS_fedfile_20151205.txt to weekly files
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+None None
+INFO:__main__:uploading weekly files [u'ATL_fedfile_20151205.txt', u'AUS_fedfile_20151205.txt', u'BIR_fedfile_20151205.txt', u'BOS_fedfile_20151205.txt', u'BUF_fedfile_20151205.txt', u'CHA_fedfile_20151205.txt', u'CHI_fedfile_20151205.txt', u'CIN_fedfile_20151205.txt', u'CLE_fedfile_20151205.txt', u'COL_fedfile_20151205.txt', u'DAL_fedfile_20151205.txt', u'DEN_fedfile_20151205.txt', u'DET_fedfile_20151205.txt', u'HAR_fedfile_20151205.txt', u'HOU_fedfile_20151205.txt', u'IND_fedfile_20151205.txt', u'JAC_fedfile_20151205.txt', u'KAN_fedfile_20151205.txt', u'LAS_fedfile_20151205.txt', u'LOS_fedfile_20151205.txt', u'LOU_fedfile_20151205.txt', u'MEM_fedfile_20151205.txt', u'MIA_fedfile_20151205.txt', u'MIL_fedfile_20151205.txt', u'MIN_fedfile_20151205.txt', u'NAS_fedfile_20151205.txt', u'NOR_fedfile_20151205.txt', u'NYC_fedfile_20151205.txt', u'OKC_fedfile_20151205.txt', u'ORL_fedfile_20151205.txt', u'PHI_fedfile_20151205.txt', u'PHO_fedfile_20151205.txt', u'PIT_fedfile_20151205.txt', u'POR_fedfile_20151205.txt', u'PRO_fedfile_20151205.txt', u'RAL_fedfile_20151205.txt', u'RIC_fedfile_20151205.txt', u'SAC_fedfile_20151205.txt', u'SAN_fedfile_20151205.txt', u'SAT_fedfile_20151205.txt', u'SEA_fedfile_20151205.txt', u'SFO_fedfile_20151205.txt', u'SLC_fedfile_20151205.txt', u'TAM_fedfile_20151205.txt', u'VAB_fedfile_20151205.txt', u'WAS_fedfile_20151205.txt']
+INFO:helpers.s3_factory:found bucket <Bucket: cinchfinancial-mortgage-optimalblue-proto>
+INFO:helpers.s3_factory:initiating multi-part upload
+INFO:helpers.s3_factory:turning to threaded approach
+INFO:helpers.s3_factory:loaded file ATL_fedfile_20151205.txt to queue, size 1
+INFO:helpers.s3_factory:loaded file AUS_fedfile_20151205.txt to queue, size 2
+INFO:helpers.s3_factory:loaded file BIR_fedfile_20151205.txt to queue, size 3
+INFO:helpers.s3_factory:loaded file BOS_fedfile_20151205.txt to queue, size 4
+INFO:helpers.s3_factory:loaded file BUF_fedfile_20151205.txt to queue, size 5
+INFO:helpers.s3_factory:loaded file CHA_fedfile_20151205.txt to queue, size 6
+INFO:helpers.s3_factory:loaded file CHI_fedfile_20151205.txt to queue, size 7
+INFO:helpers.s3_factory:loaded file CIN_fedfile_20151205.txt to queue, size 8
+INFO:helpers.s3_factory:loaded file CLE_fedfile_20151205.txt to queue, size 9
+INFO:helpers.s3_factory:loaded file COL_fedfile_20151205.txt to queue, size 10
+INFO:helpers.s3_factory:loaded file DAL_fedfile_20151205.txt to queue, size 11
+INFO:helpers.s3_factory:loaded file DEN_fedfile_20151205.txt to queue, size 12
+INFO:helpers.s3_factory:loaded file DET_fedfile_20151205.txt to queue, size 13
+INFO:helpers.s3_factory:loaded file HAR_fedfile_20151205.txt to queue, size 14
+INFO:helpers.s3_factory:loaded file HOU_fedfile_20151205.txt to queue, size 15
+INFO:helpers.s3_factory:loaded file IND_fedfile_20151205.txt to queue, size 16
+INFO:helpers.s3_factory:loaded file JAC_fedfile_20151205.txt to queue, size 17
+INFO:helpers.s3_factory:loaded file KAN_fedfile_20151205.txt to queue, size 18
+INFO:helpers.s3_factory:loaded file LAS_fedfile_20151205.txt to queue, size 19
+INFO:helpers.s3_factory:loaded file LOS_fedfile_20151205.txt to queue, size 20
+INFO:helpers.s3_factory:loaded file LOU_fedfile_20151205.txt to queue, size 21
+INFO:helpers.s3_factory:loaded file MEM_fedfile_20151205.txt to queue, size 22
+INFO:helpers.s3_factory:loaded file MIA_fedfile_20151205.txt to queue, size 23
+INFO:helpers.s3_factory:loaded file MIL_fedfile_20151205.txt to queue, size 24
+INFO:helpers.s3_factory:loaded file MIN_fedfile_20151205.txt to queue, size 25
+INFO:helpers.s3_factory:loaded file NAS_fedfile_20151205.txt to queue, size 26
+INFO:helpers.s3_factory:loaded file NOR_fedfile_20151205.txt to queue, size 27
+INFO:helpers.s3_factory:loaded file NYC_fedfile_20151205.txt to queue, size 28
+INFO:helpers.s3_factory:loaded file OKC_fedfile_20151205.txt to queue, size 29
+INFO:helpers.s3_factory:loaded file ORL_fedfile_20151205.txt to queue, size 30
+INFO:helpers.s3_factory:loaded file PHI_fedfile_20151205.txt to queue, size 31
+INFO:helpers.s3_factory:loaded file PHO_fedfile_20151205.txt to queue, size 32
+INFO:helpers.s3_factory:loaded file PIT_fedfile_20151205.txt to queue, size 33
+INFO:helpers.s3_factory:loaded file POR_fedfile_20151205.txt to queue, size 34
+INFO:helpers.s3_factory:loaded file PRO_fedfile_20151205.txt to queue, size 35
+INFO:helpers.s3_factory:loaded file RAL_fedfile_20151205.txt to queue, size 36
+INFO:helpers.s3_factory:loaded file RIC_fedfile_20151205.txt to queue, size 37
+INFO:helpers.s3_factory:loaded file SAC_fedfile_20151205.txt to queue, size 38
+INFO:helpers.s3_factory:loaded file SAN_fedfile_20151205.txt to queue, size 39
+INFO:helpers.s3_factory:loaded file SAT_fedfile_20151205.txt to queue, size 40
+INFO:helpers.s3_factory:loaded file SEA_fedfile_20151205.txt to queue, size 41
+INFO:helpers.s3_factory:loaded file SFO_fedfile_20151205.txt to queue, size 42
+INFO:helpers.s3_factory:loaded file SLC_fedfile_20151205.txt to queue, size 43
+INFO:helpers.s3_factory:loaded file TAM_fedfile_20151205.txt to queue, size 44
+INFO:helpers.s3_factory:loaded file VAB_fedfile_20151205.txt to queue, size 45
+INFO:helpers.s3_factory:loaded file WAS_fedfile_20151205.txt to queue, size 46
+INFO:helpers.s3_factory:creating pool
+INFO:helpers.s3_factory:running map task
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 9, stats <StringIO.StringIO instance at 0x10a042b48>
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 5, stats <StringIO.StringIO instance at 0x10a042b00>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 13, stats <StringIO.StringIO instance at 0x10a042c20>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:9 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:19 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:29 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:39 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:49 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 3, stats <StringIO.StringIO instance at 0x10a042ab8>
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:59 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:69 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:79 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:89 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:99 % uploaded
+INFO:helpers.s3_factory:uploaded part 5
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:20 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:uploaded part 9
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:uploaded part 13
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:70 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 3
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 7, stats <StringIO.StringIO instance at 0x10a042b90>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:uploading part 1, stats <StringIO.StringIO instance at 0x10a042a70>
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 11, stats <StringIO.StringIO instance at 0x10a042bd8>
+INFO:helpers.s3_factory:9 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:19 % uploaded
+INFO:helpers.s3_factory:uploaded part 7
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:29 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:39 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:49 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:59 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:69 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:79 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:89 % uploaded
+INFO:helpers.s3_factory:99 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:uploaded part 1
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:80 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 11
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 6, stats <StringIO.StringIO instance at 0x10a042b00>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 6
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 14, stats <StringIO.StringIO instance at 0x10a042c20>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 8, stats <StringIO.StringIO instance at 0x10a042b90>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:9 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:19 % uploaded
+INFO:helpers.s3_factory:29 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:39 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:49 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 10, stats <StringIO.StringIO instance at 0x10a042b48>
+INFO:helpers.s3_factory:59 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:69 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:79 % uploaded
+INFO:helpers.s3_factory:uploaded part 14
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:89 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:99 % uploaded
+INFO:helpers.s3_factory:uploaded part 8
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:10 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 10
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 2, stats <StringIO.StringIO instance at 0x10a042a70>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 2
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 12, stats <StringIO.StringIO instance at 0x10a042bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 4, stats <StringIO.StringIO instance at 0x10a042ab8>
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:9 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:19 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 12
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:29 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:39 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:49 % uploaded
+INFO:helpers.s3_factory:59 % uploaded
+INFO:helpers.s3_factory:69 % uploaded
+INFO:helpers.s3_factory:79 % uploaded
+INFO:helpers.s3_factory:89 % uploaded
+INFO:helpers.s3_factory:99 % uploaded
+INFO:helpers.s3_factory:uploaded part 4
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 19, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 21, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 19
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:30 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:40 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:50 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:uploaded part 21
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 15, stats <StringIO.StringIO instance at 0x108798998>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 17, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 15
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:10 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:20 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:30 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 17
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 27, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 23, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 27
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:70 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:80 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:90 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 23
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 25, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 25
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 22, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 22
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 16, stats <StringIO.StringIO instance at 0x108798998>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 16
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 18, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 18
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 20, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 24, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:uploaded part 20
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:50 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:60 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 24
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 26, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 26
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 29, stats <StringIO.StringIO instance at 0x1087d95f0>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 28, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 33, stats <StringIO.StringIO instance at 0x1087d8cf8>
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:uploaded part 33
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:100 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:uploaded part 29
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:50 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:60 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 31, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 28
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:10 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 31
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 35, stats <StringIO.StringIO instance at 0x1087b1f80>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 35
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 37, stats <StringIO.StringIO instance at 0x1087985f0>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 37
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 39, stats <StringIO.StringIO instance at 0x108798cf8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 30, stats <StringIO.StringIO instance at 0x1087a02d8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:uploaded part 39
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:30 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:40 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:50 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 30
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 32, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 32
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 34, stats <StringIO.StringIO instance at 0x1087d8cf8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 36, stats <StringIO.StringIO instance at 0x1087b1f80>
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 41, stats <StringIO.StringIO instance at 0x10a042908>
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 36
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 34
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 41
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 42, stats <StringIO.StringIO instance at 0x10a042908>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 42
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 38, stats <StringIO.StringIO instance at 0x10879e170>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 40, stats <StringIO.StringIO instance at 0x108798cf8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:uploaded part 40
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 38
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 43, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 43
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 45, stats <StringIO.StringIO instance at 0x109ff10e0>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 45
+INFO:helpers.s3_factory:uploading parts
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 44, stats <StringIO.StringIO instance at 0x109269bd8>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 44
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:cleaning headers
+INFO:helpers.s3_factory:skipping redundant header
+INFO:helpers.s3_factory:uploading part 46, stats <StringIO.StringIO instance at 0x109ff10e0>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploaded part 46
+INFO:helpers.s3_factory:tear down
+INFO:helpers.s3_factory:completing upload
+INFO:__main__:weekly file upload complete
+INFO:__main__:uploading daily files [u'DEN_fedfile_20151130.txt', u'DEN_fedfile_20151201.txt', u'DEN_fedfile_20151202.txt', u'DEN_fedfile_20151203.txt', u'DEN_fedfile_20151204.txt', u'LOS_fedfile_20151130.txt', u'LOS_fedfile_20151201.txt', u'LOS_fedfile_20151202.txt', u'LOS_fedfile_20151203.txt', u'LOS_fedfile_20151204.txt']
+INFO:helpers.s3_factory:found bucket <Bucket: cinchfinancial-mortgage-optimalblue-proto>
+INFO:helpers.s3_factory:going the pooled approach
+INFO:helpers.s3_factory:creating key daily/DEN_fedfile_20151130.txt
+INFO:helpers.s3_factory:loaded file DEN_fedfile_20151130.txt to queue, size 1
+INFO:helpers.s3_factory:creating key daily/DEN_fedfile_20151201.txt
+INFO:helpers.s3_factory:loaded file DEN_fedfile_20151201.txt to queue, size 2
+INFO:helpers.s3_factory:creating key daily/DEN_fedfile_20151202.txt
+INFO:helpers.s3_factory:loaded file DEN_fedfile_20151202.txt to queue, size 3
+INFO:helpers.s3_factory:creating key daily/DEN_fedfile_20151203.txt
+INFO:helpers.s3_factory:loaded file DEN_fedfile_20151203.txt to queue, size 4
+INFO:helpers.s3_factory:creating key daily/DEN_fedfile_20151204.txt
+INFO:helpers.s3_factory:loaded file DEN_fedfile_20151204.txt to queue, size 5
+INFO:helpers.s3_factory:creating key daily/LOS_fedfile_20151130.txt
+INFO:helpers.s3_factory:loaded file LOS_fedfile_20151130.txt to queue, size 6
+INFO:helpers.s3_factory:creating key daily/LOS_fedfile_20151201.txt
+INFO:helpers.s3_factory:loaded file LOS_fedfile_20151201.txt to queue, size 7
+INFO:helpers.s3_factory:creating key daily/LOS_fedfile_20151202.txt
+INFO:helpers.s3_factory:loaded file LOS_fedfile_20151202.txt to queue, size 8
+INFO:helpers.s3_factory:creating key daily/LOS_fedfile_20151203.txt
+INFO:helpers.s3_factory:loaded file LOS_fedfile_20151203.txt to queue, size 9
+INFO:helpers.s3_factory:creating key daily/LOS_fedfile_20151204.txt
+INFO:helpers.s3_factory:loaded file LOS_fedfile_20151204.txt to queue, size 10
+INFO:helpers.s3_factory:creating pool
+INFO:helpers.s3_factory:running map task
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/DEN_fedfile_20151204.txt>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/DEN_fedfile_20151201.txt>
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/DEN_fedfile_20151130.txt>
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/DEN_fedfile_20151202.txt>
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:helpers.s3_factory:20 % uploaded
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/DEN_fedfile_20151203.txt>
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:60 % uploaded
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:20 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:uploading keys
+INFO:connectors.sftp_connector:obtained credentials {'host': 'sftp.optimalblue.com', 'password': 'd4ech7tabuwU', 'user': 'CinchFinancial'} for source ob-sftp
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/LOS_fedfile_20151201.txt>
+INFO:paramiko.transport:Connected (version 2.0, client 5.25)
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/LOS_fedfile_20151130.txt>
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:connectors.sftp_connector:connected to source ob-sftp
+INFO:paramiko.transport:Secsh channel 1 opened.
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] Opened sftp connection (server version 3)
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/LOS_fedfile_20151203.txt>
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/LOS_fedfile_20151202.txt>
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:paramiko.transport.sftp:[chan 1] sftp session closed.
+INFO:helpers.s3_factory:setting key <Key: cinchfinancial-mortgage-optimalblue-proto,daily/LOS_fedfile_20151204.txt>
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:0 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:10 % uploaded
+INFO:helpers.s3_factory:20 % uploaded
+INFO:helpers.s3_factory:30 % uploaded
+INFO:helpers.s3_factory:40 % uploaded
+INFO:helpers.s3_factory:50 % uploaded
+INFO:helpers.s3_factory:60 % uploaded
+INFO:helpers.s3_factory:70 % uploaded
+INFO:helpers.s3_factory:80 % uploaded
+INFO:helpers.s3_factory:90 % uploaded
+INFO:helpers.s3_factory:100 % uploaded
+INFO:helpers.s3_factory:tear down
+INFO:__main__:complete!
