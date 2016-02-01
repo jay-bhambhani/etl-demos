@@ -144,7 +144,7 @@ class S3Factory(AWSConnector):
             for file_name  in files:
                 logger.info('sequential it is')
                 key_name = '{folder}/{f_name}'.format(folder=key_base, f_name=file_name)
-                key = self._create_key(key_name, bucket)
+                key = self.create_key(key_name, bucket)
                 self.set_key(key, file_name)
 
 
@@ -159,7 +159,7 @@ class S3Factory(AWSConnector):
         
         for file_name in files:
             key_name = '{folder}/{f_name}'.format(folder=key_base, f_name=file_name)
-            key = self._create_key(key_name, bucket)
+            key = self.create_key(key_name, bucket)
             upload_jobs.append((key, file_name))
             logger.info('loaded file %s to queue, size %s' % (file_name, len(upload_jobs)))
         
@@ -172,6 +172,7 @@ class S3Factory(AWSConnector):
         file_object: file object being uploaded to key
         """
         file_object = self._stream_helper(file_name)
+        print key, file_object
 
         logger.info('setting key %s' % key)
         try:
@@ -240,10 +241,12 @@ class S3Factory(AWSConnector):
         pool = self._initiate_pool()
         logger.info('running map task')
         _bound_upload_wrapper = partial(upload_wrapper, self)
-        pool.map(_bound_upload_wrapper, upload_jobs)
-        logger.info('tear down')
-        pool.close()
-        pool.join()
+        try:
+            pool.map(_bound_upload_wrapper, upload_jobs)
+        finally:
+            logger.info('tear down')
+            pool.close()
+            pool.join()
                 
 
     def sequential_partial_files(self, multi_part, parts, clean_headers):
@@ -302,6 +305,19 @@ class S3Factory(AWSConnector):
             for mpu in bucket.list_multipart_uploads():
                 logger.info('deleting mpu %s, parts %s' % (mpu.key_name, mpu.get_all_parts()))
                 bucket.cancel_multipart_upload(mpu.key_name, mpu.id)
+                
+
+    def create_key(self, key_name, bucket):
+        """
+        helper method to create a key
+        key_name: str of key
+        bucket: bucket object
+        """
+        key = Key(bucket)
+        key.key = key_name
+        logger.info('creating key %s' % key.key)
+
+        return key
 
     
     def _initiate_pool(self):
@@ -314,6 +330,7 @@ class S3Factory(AWSConnector):
         """
         opens file based on connection
         file_name: str
+        buffer: bool of buffer or not
         """
         if self.source:
             self.connect_to_source()
@@ -321,8 +338,12 @@ class S3Factory(AWSConnector):
             with self.source.connection as source_connection:
                 self.source.connection.getfo(file_name, file_object)
             file_object.seek(0)
-        else:
+        
+        elif isinstance(file_name, basestring):
             file_object = open(file_name, 'rU')
+
+        else:
+            file_object = file_name
 
         return file_object
     
@@ -354,18 +375,3 @@ class S3Factory(AWSConnector):
     
         return prepped_file
 
-
- 
-
-    @staticmethod
-    def _create_key(key_name, bucket):
-        """
-        helper method to create a key
-        key_name: str of key
-        bucket: bucket object
-        """
-        key = Key(bucket)
-        key.key = key_name
-        logger.info('creating key %s' % key.key)
-
-        return key
