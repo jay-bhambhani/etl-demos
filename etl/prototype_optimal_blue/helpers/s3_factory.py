@@ -8,7 +8,6 @@
 # lets import some important packages
 import os
 import sys
-print sys.path
 import web
 import re
 from logging import getLogger, basicConfig, INFO
@@ -172,7 +171,6 @@ class S3Factory(AWSConnector):
         file_object: file object being uploaded to key
         """
         file_object = self._stream_helper(file_name)
-        print key, file_object
 
         logger.info('setting key %s' % key)
         try:
@@ -279,6 +277,7 @@ class S3Factory(AWSConnector):
             part = self._header_handler(part, index)
         try:
             logger.info('uploading part %s, stats %s' % (index, part))
+            part.seek(0)
             multi_part.upload_part_from_file(part, index, cb=self._display_progress, num_cb=11)
         except:
             raise TypeError('wrong file format')
@@ -326,27 +325,37 @@ class S3Factory(AWSConnector):
         return pool
 
         
-    def _stream_helper(self, file_name):
+    def _stream_helper(self, file_ref):
         """
         opens file based on connection
-        file_name: str
+        file_ref: str or file buffer object
         buffer: bool of buffer or not
         """
         if self.source:
             self.connect_to_source()
             file_object = StringIO()
             with self.source.connection as source_connection:
-                self.source.connection.getfo(file_name, file_object)
-            file_object.seek(0)
+                self.source.connection.getfo(file_ref, file_object)
         
-        elif isinstance(file_name, basestring):
-            file_object = open(file_name, 'rU')
+        elif isinstance(file_ref, basestring):
+            file_object = open(file_ref, 'rU')
 
         else:
-            file_object = file_name
+            file_object = file_ref
+
+        final = self.fill_file(file_object)
+        final.seek(0)
+        return final
+    
+    @staticmethod
+    def fill_file(file_object):
+        if file_object.len > 118:
+            pass
+        else:
+            logger.info('skipping empty file %s' % file_object)
+            file_object.write('N/A')
 
         return file_object
-    
 
     @staticmethod
     def _display_progress(bytes_so_far, total_bytes):

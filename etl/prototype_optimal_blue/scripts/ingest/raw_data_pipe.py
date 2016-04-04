@@ -44,25 +44,16 @@ def pipe():
     
 
     with sftp.connection:
-        grouped_files, max_date_string = concat_files(sftp.connection)
+        grouped_files, max_date_string = group_files(sftp.connection)
     
     sftp.remove_connection()
     s3_factory.add_data_source(sftp)
-    print sftp.connection, s3_factory.source.connection
+    logger.info('sftp connection %s, s3 connection %s' % (sftp.connection, s3_factory.source.connection))
     upload_to_s3(s3_factory, grouped_files, max_date_string)
 
     logger.info('complete!')
 
 
-def concat_files(source):
-    """
-    merge multiple files
-    sftp: sftp_harvester object
-    """
-    logger.info('grouping files')
-    grouped_files, max_date_string = group_files(source)
-
-    return grouped_files, max_date_string
 
 def upload_to_s3(s3_factory, grouped_files, max_date_string):
     """
